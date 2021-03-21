@@ -49,11 +49,6 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  # ユーザーのログイン情報を破棄する
-  def forget
-    update_attribute(:remember_digest, nil)
-  end
-
   # 記憶したURL (もしくはデフォルト値) にリダイレクト
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
